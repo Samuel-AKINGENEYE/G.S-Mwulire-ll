@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G.S Mwulire II - Home</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #1a5276, #2874a6);
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            background-color: #fff;
+        }
+
+        .school-name {
+            margin-left: 15px;
+        }
+
+        .school-name h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .school-name p {
+            font-size: 1rem;
+            color: #e5e5e5;
+        }
+
+        .contact-info {
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .contact-info i {
+            margin-left: 8px;
+            color: #f1c40f;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #16405f;
+            padding: 0.8rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li {
+            margin: 0 5px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.6);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* School Levels Section */
+        .school-levels {
+            padding: 3rem 5%;
+            background-color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: #3498db;
+        }
+
+        .levels-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .level-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            width: calc(33.333% - 20px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .level-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .level-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .level-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .level-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(52, 152, 219, 0.9);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .level-card:hover .level-image img {
+            transform: scale(1.1);
+        }
+
+        .level-content {
+            padding: 1.5rem;
+        }
+
+        .level-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .level-content p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+        }
+
+        .level-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .level-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* About Section */
+        .about {
+            padding: 3rem 5%;
+            background-color: #f5f7fa;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 400px;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: #3498db;
+        }
+
+        .stat-item p {
+            color: #7f8c8d;
+            margin-bottom: 0;
+        }
+
+        /* News Section */
+        .news {
+            padding: 3rem 5%;
+            background-color: #fff;
+        }
+
+        .news-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 1rem 0;
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+        }
+
+        .news-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .news-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .news-container::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .news-item {
+            min-width: 300px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.2rem;
+        }
+
+        .news-date {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-content h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .news-content p {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .news-btn {
+            font-size: 0.9rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .news-btn:hover {
+            text-decoration: underline;
+        }
+
+        .news-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 10px;
+        }
+
+        .news-nav-btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .news-nav-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Call to Action */
+        .cta {
+            padding: 4rem 5%;
+            background: linear-gradient(to right, #2874a6, #3498db);
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #e74c3c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 3rem 5% 2rem;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #3498db;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: #3498db;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            color: #bdc3c7;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: #3498db;
+            min-width: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            background-color: #34495e;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .social-icons a:hover {
+            background-color: #3498db;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .level-card {
+                width: calc(50% - 15px);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image, .about-content {
+                flex: none;
+                width: 100%;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin: 0 auto 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .school-name {
+                margin: 1rem 0 0 0;
+            }
+            
+            .contact-info {
+                text-align: center;
+                margin-top: 1rem;
+                width: 100%;
+            }
+
+            .contact-info p {
+                justify-content: center;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #0d2c44;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                padding: 1rem 5%;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            nav ul li a {
+                justify-content: center;
+                padding: 0.8rem;
+            }
+            
+            .level-card {
+                width: 100%;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .stat-item {
+                width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                height: 400px;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+
+            .footer-section {
+                min-width: 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <img src="/api/placeholder/80/80" alt="G.S Mwulire II Logo">
+                <div class="school-name">
+                    <h1>G.S MWULIRE II</h1>
+                    <p>Excellence in Education</p>
+                </div>
+            </div>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> info@gsmwulire2.ac.rw</p>
+                <p><i class="fas fa-phone"></i> +250 790663921</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rwamagana District, Eastern Province</p>
+            </div>
+        </div>
+        <nav>
+            <div class="nav-container">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul id="navMenu">
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#"><i class="fas fa-book-open"></i> Academic</a></li>
+                    <li><a href="#"><i class="fas fa-user-graduate"></i> Admissions</a></li>
+                    <li><a href="#"><i class="fas fa-images"></i> Gallery</a></li>
+                    <li><a href="#"><i class="fas fa-newspaper"></i> News</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img class="hero-image" src="/api/placeholder/1600/900" alt="G.S Mwulire II Campus">
+        <div class="hero-content fade-in">
+            <h2>Welcome to G.S Mwulire II</h2>
+            <p>A center of excellence providing quality education from nursery to ordinary level. We nurture tomorrow's leaders through holistic education and strong values.</p>
+            <a href="#" class="hero-btn"><i class="fas fa-arrow-right"></i> Learn More</a>
+        </div>
+    </section>
+
+    <!-- School Levels Section -->
+    <section class="school-levels">
+        <div class="section-title">
+            <h2><i class="fas fa-graduation-cap"></i> Our Academic Levels</h2>
+        </div>
+        <div class="levels-container">
+            <div class="level-card fade-in">
+                <div class="level-image">
+                    <img src="/api/placeholder/400/300" alt="Nursery Level">
+                    <div class="level-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                </div>
+                <div class="level-content">
+                    <h3><i class="fas fa-school"></i> Nursery Level</h3>
+                    <p>We provide a nurturing environment for our youngest learners to develop foundational skills through play-based learning and guided activities.</p>
+                    <a href="#" class="level-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                </div>
+            </div>
+            <div class="level-card fade-in">
+                <div class="level-image">
+                    <img src="/api/placeholder/400/300" alt="Primary Level">
+                    <div class="level-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                </div>
+                <div class="level-content">
+                    <h3><i class="fas fa-pencil-alt"></i> Primary Level</h3>
+                    <p>Our primary program focuses on developing strong academic foundations while encouraging critical thinking and creativity in students.</p>
+                    <a href="#" class="level-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                </div>
+            </div>
+            <div class="level-card fade-in">
+                <div class="level-image">
+                    <img src="/api/placeholder/400/300" alt="Ordinary Level">
+                    <div class="level-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                </div>
+                <div class="level-content">
+                    <h3><i class="fas fa-book"></i> Ordinary Level</h3>
+                    <p>The O-Level program prepares students for higher education with comprehensive academic instruction and extracurricular activities.</p>
+                    <a href="#" class="level-btn"><i class="fas fa-info-circle"></i> Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="/api/placeholder/600/400" alt="School Building">
+            </div>
+            <div class="about-content">
+                <h2><i class="fas fa-history"></i> About G.S Mwulire II</h2>
+                <p>G.S Mwulire II is a comprehensive educational institution located in Rwamagana District, Eastern Province of Rwanda. Since our establishment, we have been committed to providing quality education to students from nursery to ordinary level.</p>
+                <p>Our mission is to nurture well-rounded individuals with strong academic foundations, ethical values, and the skills needed to succeed in a rapidly changing world. We maintain small class sizes to ensure personalized attention for each student.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>800+</h3>
+                        <p><i class="fas fa-users"></i> Students</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>45</h3>
+                        <p><i class="fas fa-chalkboard-teacher"></i> Teachers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p><i class="fas fa-trophy"></i> Pass Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news">
+        <div class="section-title">
+            <h2><i class="fas fa-newspaper"></i> Latest News</h2>
+        </div>
+        <div class="news-container" id="newsContainer">
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="/api/placeholder/400/300" alt="Science Fair">
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> March 25, 2025</div>
+                    <h3>Annual Science Fair Winners</h3>
+                    <p>Our students showcased impressive scientific projects at this year's science fair. Congratulations to all participants and winners!</p>
+                    <a href="#" class="news-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="/api/placeholder/400/300" alt="Sports Competition">
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> March 15, 2025</div>
+                    <h3>Regional Sports Championship</h3>
+                    <p>G.S Mwulire II sports teams performed exceptionally well at the regional championships, bringing home multiple trophies.</p>
+                    <a href="#" class="news-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="/api/placeholder/400/300" alt="New Library">
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> February 28, 2025</div>
+                    <h3>New Library Opening</h3>
+                    <p>We are excited to announce the opening of our new state-of-the-art library with thousands of books and digital resources.</p>
+                    <a href="#" class="news-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-image">
+                    <img src="/api/placeholder/400/300" alt="Art Exhibition">
+                </div>
+                <div class="news-content">
+                    <div class="news-date"><i class="far fa-calendar-alt"></i> February 12, 2025</div>
+                    <h3>Student Art Exhibition</h3>
+                    <p>Our talented students showcased their artistic abilities at the annual art exhibition, impressing visitors with their creativity.</p>
+                    <a href="#" class="news-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="news-nav">
+            <button class="news-nav-btn" id="prevNews"><i class="fas fa-chevron-left"></i></button>
+            <button class="news-nav-btn" id="nextNews"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <h2>Join Our School Community</h2>
+        <p>We are currently accepting applications for the upcoming academic year. Contact us today to schedule a visit or learn more about our admission process.</p>
+        <a href="#" class="cta-btn"><i class="fas fa-paper-plane"></i> Apply Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Academics</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Admissions</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> News & Events</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Academic Levels</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Nursery Level</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Primary Level</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Ordinary Level</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Curriculum</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Academic Calendar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section footer-contact">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-school"></i> G.S Mwulire II</p>
+                <p><i class="fas fa-map-marker-alt"></i> Rwamagana District, Eastern Province</p>
+                <p><i class="fas fa-globe-africa"></i> Rwanda</p>
+                <p><i class="fas fa-phone"></i> +250 790663921</p>
+                <p><i class="fas fa-envelope"></i> info@gsmwulire2.ac.rw</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <i class="far fa-copyright"></i>
+            <p>2025 G.S Mwulire II. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('show');
+                });
+            });
+            
+            // Fade-in animation for elements as they come into view
+            const fadeElements = document.querySelectorAll('.level-card, .hero-content');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // News Carousel Navigation
+            const newsContainer = document.getElementById('newsContainer');
+            const prevBtn = document.getElementById('prevNews');
+            const nextBtn = document.getElementById('nextNews');
+            
+            nextBtn.addEventListener('click', () => {
+                newsContainer.scrollBy({
+                    left: 320,
+                    behavior: 'smooth'
+                });
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                newsContainer.scrollBy({
+                    left: -320,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Active Navigation Highlighting
+            const navLinks = document.querySelectorAll('nav ul li a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Current Year for Copyright
+            const year = new Date().getFullYear();
+            document.querySelector('.copyright p').textContent = `${year} G.S Mwulire II. All Rights Reserved.`;
+        });
+    </script>
+</body>
+</html>
